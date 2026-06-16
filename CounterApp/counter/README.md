@@ -1,16 +1,57 @@
-# React + Vite
+# Counter App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+シンプルなカウンターアプリです。
 
-Currently, two official plugins are available:
+🔗 **デモ**: [https://counter-mu-eight-35.vercel.app/](https://counter-mu-eight-35.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 使用技術
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **React** — UIコンポーネントの構築
+- **JavaScript (ES6+)** — ロジック実装
+- **CSS** — スタイリング
+- **Vercel** — デプロイ
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 機能
+
+- カウントのインクリメント（+1）
+- カウントのデクリメント（-1）
+- カウントのリセット
+
+---
+
+## セットアップ
+
+```bash
+# リポジトリをクローン
+git clone https://github.com/your-username/counter.git
+cd counter
+
+# 依存関係をインストール
+npm install
+
+# 開発サーバーを起動
+npm start
+```
+
+ブラウザで [http://localhost:3000](http://localhost:3000) を開いて確認できます。
+
+---
+
+## ビルド
+
+```bash
+npm run build
+```
+
+`build` フォルダに本番用ファイルが生成されます。
+
+---
+
+## デプロイ
+
+[Vercel](https://vercel.com/) にデプロイしています。  
+`main` ブランチへのプッシュで自動デプロイされます。
