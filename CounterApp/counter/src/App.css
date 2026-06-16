@@ -1,0 +1,92 @@
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 48px 56px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  width: 320px;
+}
+
+
+h1 {
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-bottom: 32px;
+}
+
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+button {
+  padding: 14px 0;
+  font-size: 1.25rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  color: #fff;
+}
+
+button:active {
+  transform: scale(0.96);
+}
+
+
+button:nth-child(1) { background: #3b82f6; }
+button:nth-child(1):hover { background: #2563eb; }
+
+
+button:nth-child(2) { background: #6b7280; }
+button:nth-child(2):hover { background: #4b5563; }
+
+
+button:nth-child(3) { background: #10b981; }
+button:nth-child(3):hover { background: #059669; }
+
+
+button:nth-child(4) { background: #f59e0b; }
+button:nth-child(4):hover { background: #d97706; }
