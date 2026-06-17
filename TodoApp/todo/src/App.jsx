@@ -11,6 +11,13 @@ function App() {
     setInput("");
   };
 
+  const delFn = (i) => {
+    const delArry = arry.filter((ar, index) => {
+      return index !== i;
+    });
+    setArry(delArry);
+  };
+
   return (
     <>
       <h1>TodoApp</h1>
@@ -28,7 +35,11 @@ function App() {
 
       <ul>
         {arry.map((arries, index) => {
-          return <li key={index}>{arries}</li>;
+          return (
+            <li key={index}>
+              {arries} <button onClick={() => delFn(index)}>削除</button>
+            </li>
+          );
         })}
       </ul>
     </>
