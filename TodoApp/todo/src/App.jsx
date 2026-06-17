@@ -6,6 +6,9 @@ function App() {
   const [arry, setArry] = useState([]);
 
   const submitBtn = () => {
+    if(input === ""){
+      return alert("Todoを記入してください");
+    }
     const newArry = [...arry, input];
     setArry(newArry);
     setInput("");
@@ -28,6 +31,9 @@ function App() {
         id="inp"
         placeholder="Todoをここに記入しましょう"
         onChange={(e) => setInput(e.target.value)}
+        onKeyDown={(e) => {
+          if (e.key === "Enter") submitBtn();
+        }}
       />
       <button id="btn" onClick={submitBtn}>
         送信
