@@ -1,18 +1,56 @@
-# React + Vite
+TodoApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+シンプルで使いやすい Todo 管理アプリです。React で構築し、ダークモード対応・アニメーション付きのモダンな UI を備えています。
 
-Currently, two official plugins are available:
+🔗 デモ: https://todo-seven-theta-86.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+機能
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+✅ Todo の追加（空入力時はアラートで通知）
+🗑️ Todo の個別削除
+🌗 ダークモード自動対応（prefers-color-scheme）
+✨ 追加時のスライドインアニメーション
+📱 レスポンシブ対応（スマホ幅でレイアウト最適化）
 
-Note: This will impact Vite dev & build performances.
 
-## Expanding the ESLint configuration
+使用技術
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+React（Hooks: useState）
+CSS（CSS 変数によるテーマ管理 / Grid レイアウト）
+Vercel（ホスティング）
+
+
+使い方
+
+
+入力欄に Todo を記入する
+「送信」ボタン（または Enter）で追加
+各 Todo の「削除」ボタンで削除
+
+
+ローカルでの起動
+
+bash# 依存パッケージのインストール
+npm install
+
+# 開発サーバーの起動
+npm run dev
+
+実装のポイント
+
+
+useState で入力値（input）と Todo 配列（arry）を管理
+form の onSubmit で送信を処理し、Enter キーでも追加可能
+削除は filter で対象インデックスを除外して実装
+カラー・余白・角丸などを CSS 変数で一元管理し、ライト/ダーク両テーマに対応
+
+
+今後の改善案
+
+
+localStorage への保存（リロード後もデータを保持）
+完了状態のチェック機能
+編集機能
+key にインデックスではなく一意の ID を使用
