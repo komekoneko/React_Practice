@@ -23,7 +23,11 @@ function App() {
 
   return (
     <>
-      <h1>TodoApp</h1>
+    <form onSubmit={(e) => {
+      e.preventDefault();
+      submitBtn();
+    }}>
+    <h1>TodoApp</h1>
       <label htmlFor="inp">Todo: </label>
       <input
         type="text"
@@ -31,13 +35,12 @@ function App() {
         id="inp"
         placeholder="Todoをここに記入しましょう"
         onChange={(e) => setInput(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") submitBtn();
-        }}
       />
-      <button id="btn" onClick={submitBtn}>
+      <button id="btn" type="submit">
         送信
       </button>
+    </form>
+      
 
       <ul>
         {arry.map((arries, index) => {
