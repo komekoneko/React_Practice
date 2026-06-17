@@ -1,53 +1,62 @@
-TodoApp
+📝 TodoApp
 
-シンプルで使いやすい Todo 管理アプリです。React で構築し、ダークモード対応・アニメーション付きのモダンな UI を備えています。
+
+シンプルで直感的な Todo 管理 Web アプリです！
+
+
 
 🔗 デモ: https://todo-seven-theta-86.vercel.app
 
-機能
+
+✨ 機能
 
 
-✅ Todo の追加（空入力時はアラートで通知）
-🗑️ Todo の個別削除
-🌗 ダークモード自動対応（prefers-color-scheme）
-✨ 追加時のスライドインアニメーション
-📱 レスポンシブ対応（スマホ幅でレイアウト最適化）
+入力欄に書いてボタンひとつで Todo を追加
+各 Todo を個別に削除
+ダークモード自動対応（OS の設定に追従）
+追加時のスライドインアニメーション
 
 
-使用技術
+
+🛠 技術スタック
+
+項目内容フレームワークReact 18ビルドツールViteスタイリングCSS状態管理useStateデプロイVercel
 
 
-React（Hooks: useState）
-CSS（CSS 変数によるテーマ管理 / Grid レイアウト）
-Vercel（ホスティング）
+🚀 ローカルで動かす
 
-
-使い方
-
-
-入力欄に Todo を記入する
-「送信」ボタン（または Enter）で追加
-各 Todo の「削除」ボタンで削除
-
-
-ローカルでの起動
-
-bash# 依存パッケージのインストール
+bashgit clone https://github.com/your-username/todo-app.git
+cd todo-app
 npm install
-
-# 開発サーバーの起動
 npm run dev
 
-実装のポイント
+ブラウザで http://localhost:5173 を開く。
 
 
-useState で入力値（input）と Todo 配列（arry）を管理
+📁 ディレクトリ構成
+
+TodoApp/todo
+├── public
+├── src
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+
+
+💡 実装のポイント
+
+
+useState で入力値と Todo 配列を管理
 form の onSubmit で送信を処理し、Enter キーでも追加可能
 削除は filter で対象インデックスを除外して実装
-カラー・余白・角丸などを CSS 変数で一元管理し、ライト/ダーク両テーマに対応
+カラーや角丸を CSS 変数で一元管理し、ライト / ダーク両テーマに対応
 
 
-今後の改善案
+
+🔧 今後の改善案
 
 
 localStorage への保存（リロード後もデータを保持）
