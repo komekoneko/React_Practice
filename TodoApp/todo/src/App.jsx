@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   const [input, setInput] = useState("");
   const [arry, setArry] = useState([]);
+  const [checked, setChecked] = useState(false);
 
   const submitBtn = () => {
     if(input === ""){
@@ -46,6 +47,7 @@ function App() {
         {arry.map((arries, index) => {
           return (
             <li key={index}>
+              <input type="checkbox" value={checked} />
               {arries} <button onClick={() => delFn(index)}>削除</button>
             </li>
           );
