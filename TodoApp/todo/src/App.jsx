@@ -9,21 +9,21 @@ function App() {
     if(input === ""){
       return alert("Todoを記入してください");
     }
-    const newArry = [...arry, {text: input, done: false}];
+    const newArry = [...arry, {text: input, done: false, id: crypto.randomUUID()}];
     setArry(newArry);
     setInput("");
   };
 
-  const delFn = (i) => {
-    const delArry = arry.filter((ar, index) => {
-      return index !== i;
+  const delFn = (id) => {
+    const delArry = arry.filter((ar) => {
+      return ar.id !== id;
     });
     setArry(delArry);
   };
 
-  const toggleFn = (i) => {
-    const togArry = arry.map((ar, index) => {
-      return index === i? {...ar, done: !ar.done} : ar;
+  const toggleFn = (id) => {
+    const togArry = arry.map((ar) => {
+      return ar.id === id? {...ar, done: !ar.done} : ar;
     });
     setArry(togArry);
   }
@@ -52,9 +52,9 @@ function App() {
       <ul>
         {arry.map((arries, index) => {
           return (
-            <li key={index} style={{ textDecoration: arries.done ? "line-through" : "none"}}>
-              <input type="checkbox" checked={arries.done} onChange={() => toggleFn(index)} />
-              {arries.text} <button onClick={() => delFn(index)}>削除</button>
+            <li key={arries.id}>
+              <input type="checkbox" checked={arries.done} onChange={() => toggleFn(arries.id)} />
+              <span style={{ textDecoration: arries.done ? "line-through" : "none" }}>{arries.text}</span> <button onClick={() => delFn(arries.id)}>削除</button>
             </li>
           );
         })}
