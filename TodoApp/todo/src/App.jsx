@@ -4,13 +4,12 @@ import "./App.css";
 function App() {
   const [input, setInput] = useState("");
   const [arry, setArry] = useState([]);
-  const [checked, setChecked] = useState(false);
 
   const submitBtn = () => {
     if(input === ""){
       return alert("Todoを記入してください");
     }
-    const newArry = [...arry, input];
+    const newArry = [...arry, {text: input, done: false}];
     setArry(newArry);
     setInput("");
   };
@@ -21,6 +20,13 @@ function App() {
     });
     setArry(delArry);
   };
+
+  const toggleFn = (i) => {
+    const togArry = arry.map((ar, index) => {
+      return index === i? {...ar, done: !ar.done} : ar;
+    });
+    setArry(togArry);
+  }
 
   return (
     <>
@@ -46,9 +52,9 @@ function App() {
       <ul>
         {arry.map((arries, index) => {
           return (
-            <li key={index}>
-              <input type="checkbox" value={checked} />
-              {arries} <button onClick={() => delFn(index)}>削除</button>
+            <li key={index} style={{ textDecoration: arries.done ? "line-through" : "none"}}>
+              <input type="checkbox" checked={arries.done} onChange={() => toggleFn(index)} />
+              {arries.text} <button onClick={() => delFn(index)}>削除</button>
             </li>
           );
         })}
