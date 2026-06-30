@@ -33,9 +33,9 @@ function App() {
       </form>
       <li>{weather && (
         <div>
-          <p>{weather.name}</p>
-          <p>{weather.main.temp}°</p>
-          <p>{weather.weather[0].description}</p>
+          <p>名称：{weather.name}</p>
+          <p>現在の気温：{weather.main.temp}℃</p>
+          <p>現在の空：{weather.weather[0].description}</p>
           <img src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`} />
         </div>
       )}</li>     
