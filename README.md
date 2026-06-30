@@ -5,3 +5,5 @@
 2. OmikujiApp → 🔗 デモ: https://omikuji-henna.vercel.app
 
 3. TodoApp → 🔗 デモ: https://todo-seven-theta-86.vercel.app
+
+4. WeatherApp → 作成中...
