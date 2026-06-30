@@ -5,6 +5,8 @@ function App() {
   const [input, setInput] = useState("");
   const [weather, setWeather] = useState(null);
 
+  const myAPI = import.meta.env.VITE_OPENWEATHER_API_KEY;
+
   const searchFn = async (e) => {
     e.preventDefault();
     const res = await fetch(
