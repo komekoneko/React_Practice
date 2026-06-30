@@ -4,7 +4,6 @@ import "./App.css";
 function App() {
   const [input, setInput] = useState("");
   const [weather, setWeather] = useState(null);
-  const myAPI = "49fcd1c19fd3d85a9b49ddf517ef3df1";
 
   const searchFn = async (e) => {
     e.preventDefault();
