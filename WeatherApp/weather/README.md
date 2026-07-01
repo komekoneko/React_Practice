@@ -1,72 +1,72 @@
-Weather App 🌤️
+# 🌤 WeatherApp
+> 都市名や国名から現在の天気をサクッと調べられる Web アプリです！
 
-都市名を入力すると、その地域の現在の天気をリアルタイムで表示するシンプルな天気アプリです。
-React の学習と API 連携の練習として制作しました。
+🔗 デモ: https://ここにVercelのURL
 
-🔗 デモ: https://weather-fawn-sigma.vercel.app/
+---
 
+## ✨ 機能
 
-✨ 主な機能
+- 都市名・国名を入力して天気を検索
+- 天気アイコン・気温・天気の説明を表示
+- OpenWeatherMap API を使ったリアルタイムデータ取得
 
+---
 
-都市名・国名を入力して現在の天気を検索
-現在の気温をわかりやすく大きく表示
-天気に応じたアイコンを表示（晴れ・くもり・雨など）
-天気の状態を日本語で表示
-存在しない都市を入力した場合のエラーハンドリング
+## 🛠 技術スタック
 
+| 項目 | 内容 |
+| --- | --- |
+| フレームワーク | React 19 |
+| ビルドツール | Vite |
+| スタイリング | CSS |
+| 状態管理 | useState |
+| API | OpenWeatherMap |
+| デプロイ | Vercel |
 
+---
 
-🛠️ 使用技術
+## 🚀 ローカルで動かす
 
-技術用途ReactUI 構築（関数コンポーネント / Hooks）Vite開発環境・ビルドツールOpenWeatherMap API天気データの取得CSSグラスモーフィズムによる UI デザインVercelデプロイ・ホスティング
+\```bash
+git clone https://github.com/your-username/weather.git
+cd weather
+npm install
+npm run dev
+\```
 
+ブラウザで `http://localhost:5173` を開く。
 
-💡 工夫した点
+> ⚠️ `.env` ファイルを作成し、`VITE_OPENWEATHER_API_KEY=your_api_key` を設定してください。
 
+---
 
-API 連携: fetch と async/await を使い、外部 API から非同期でデータを取得
-状態管理: useState で入力値と取得した天気データを管理
-エラーハンドリング: res.ok をチェックし、都市が見つからない場合にアラートを表示
-UI デザイン: backdrop-filter を使ったグラスモーフィズム、背景のグラデーション、結果表示時のフェードインアニメーションを実装
-環境変数: API キーをコードに直書きせず .env で管理
+## 📁 ディレクトリ構成
 
+\```
+WeatherApp/weather
+├── public
+├── src
+│   ├── App.jsx
+│   ├── App.css
+│   └── main.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+\```
 
+---
 
-🚀 ローカルでの実行方法
+## 💡 実装のポイント
 
-1. リポジトリをクローン
+- `useState` で入力値と天気データを管理
+- `fetch` で OpenWeatherMap API を叩いてデータ取得
+- 環境変数（`.env`）でAPIキーを管理し、GitHubへの漏洩を防止
 
-bashgit clone https://github.com/<your-account>/<repo-name>.git
-cd <repo-name>
+---
 
-2. パッケージをインストール
+## 🔧 今後の改善案
 
-bashnpm install
-
-3. API キーを設定
-
-OpenWeatherMap で無料の API キーを取得し、
-プロジェクトのルートに .env ファイルを作成して以下を記述します。
-
-VITE_WEATHER_API_KEY=あなたのAPIキー
-
-
-コード側では import.meta.env.VITE_WEATHER_API_KEY で読み込みます。
-
-
-
-4. 開発サーバーを起動
-
-bashnpm run dev
-
-ブラウザで http://localhost:5173 を開くと動作を確認できます。
-
-
-📝 今後の改善予定
-
-
-天気の種類に応じて背景色を変える（晴れ→青空、雨→グレーなど）
-現在地の天気を自動で表示（Geolocation API）
-5日間の天気予報の追加
-ローディング表示の追加
+- 検索履歴の保存
+- 複数都市の比較表示
+- 週間予報の表示
