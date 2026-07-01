@@ -28,12 +28,12 @@
 
 ## 🚀 ローカルで動かす
 
-\```bash
+```bash
 git clone https://github.com/your-username/weather.git
 cd weather
 npm install
 npm run dev
-\```
+```
 
 ブラウザで `http://localhost:5173` を開く。
 
@@ -43,7 +43,7 @@ npm run dev
 
 ## 📁 ディレクトリ構成
 
-\```
+```
 WeatherApp/weather
 ├── public
 ├── src
@@ -53,7 +53,7 @@ WeatherApp/weather
 ├── index.html
 ├── package.json
 └── vite.config.js
-\```
+```
 
 ---
 
